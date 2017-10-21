@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "npm test -- --watchAll",
     "build": "tsc -p tsconfig.json",
-    "precommit": "npm test"
+    "precommit": "npm test && lint-staged"
   },
   "author": "Mark Goho",
   "license": "MIT",
