@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watchAll",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "precommit": "npm test"
   },
   "author": "Mark Goho",
   "license": "MIT",
