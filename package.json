@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watchAll",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "precommit": "npm test"
   },
   "author": "Mark Goho",
   "license": "MIT",
@@ -19,10 +20,7 @@
     "typescript": "^2.5.3"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "js"],
     "transform": {
       ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
