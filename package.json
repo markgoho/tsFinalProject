@@ -2,11 +2,16 @@
   "name": "tsfinalproject",
   "version": "1.0.0",
   "description": "Micro library to take advantage of TypeScript",
-  "main": "index.js",
+  "main": "build/index.umd.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watchAll",
-    "build": "tsc -p tsconfig.json",
+    "prebuild": "rm -rf dist && rm -rf build",
+    "build": "tsc -p tsconfig.json && rollup -c rollup.config.js",
+    "postbuild": "cp dist/*.d.ts build/",
     "precommit": "npm test && lint-staged"
   },
   "author": "Mark Goho",
@@ -18,6 +23,8 @@
     "jest": "^21.2.1",
     "lint-staged": "^4.3.0",
     "prettier": "^1.7.4",
+    "rollup": "^0.50.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
     "ts-jest": "^21.1.3",
     "typescript": "^2.5.3"
   },
