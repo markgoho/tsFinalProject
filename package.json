@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Micro library to take advantage of TypeScript",
   "main": "build/index.umd.js",
+  "typings": "build/index.d.ts",
   "files": [
     "build"
   ],
@@ -36,7 +37,19 @@
     "transform": {
       ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": ".*\\.spec\\.ts$"
+    "testRegex": ".*\\.spec\\.ts$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "lint-staged": {
     "src/**/*.ts": [
